@@ -1,14 +1,16 @@
-const MeetupItem = () => {
-    return <li>
-        <div>
-            <img src="" alt=""></img>
+import classes from './MeetupItem.module.css'
+
+const MeetupItem = (props) => {
+    return <li className={classes.item}>
+        <div className={classes.image}>
+            <img src={props.image} alt={props.title}></img>
         </div>
-        <div>
-            <h3>TITLE</h3>
-            <address>ADDRESS</address>
-            <p>DESCRIPTION</p>
+        <div className={classes.content}>
+            <h3>{props.title}</h3>
+            <address>{props.address}</address>
+            <p>{props.description}</p>
         </div>
-        <div>
+        <div className={classes.actions}>
             <button>To Favorites</button>
         </div>
     </li>
